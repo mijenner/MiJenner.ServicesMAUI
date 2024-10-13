@@ -9,7 +9,7 @@
             _directoryPath = FileSystem.Current.AppDataDirectory;
         }
 
-        public bool SaveText(string fileName, string text)
+        public async Task<bool> SaveText(string fileName, string text)
         {
             try
             {
@@ -24,7 +24,7 @@
             }
         }
 
-        public string ReadText(string fileName)
+        public async Task<string> ReadText(string fileName)
         {
             try
             {
@@ -38,7 +38,7 @@
             }
         }
 
-        public bool DeleteText(string fileName)
+        public async Task<bool> DeleteText(string fileName)
         {
             try
             {
@@ -57,9 +57,16 @@
             }
         }
 
-        public bool FileExists(string fileName) => File.Exists(Path.Combine(_directoryPath, fileName));
+        public async Task<bool> FileExists(string fileName)
+        {
+            var res = File.Exists(Path.Combine(_directoryPath, fileName));
+            return res;
+        }
 
-        public IEnumerable<string> GetAllFiles() => Directory.GetFiles(_directoryPath, "*.txt").Select(Path.GetFileName);
+        public async Task<IEnumerable<string>> GetAllFiles()
+        {
+            var res = Directory.GetFiles(_directoryPath, "*.txt").Select(Path.GetFileName);
+            return res;
+        }
     }
-
 }

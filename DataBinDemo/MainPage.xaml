@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DataBinDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DataBinDemo"
+    x:DataType="local:MainViewModel">
+
+    <ScrollView>
+        <StackLayout
+            Padding="30,0"
+            Orientation="Vertical"
+            Spacing="25">
+            <Label FontSize="Header" Text="Data Bin - Demo" />
+
+            <Label FontSize="Subtitle" Text="Image - try to fetch from Internet" />
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="150"
+                Source="{Binding ImageSource}"
+                WidthRequest="150" />
+            <Button
+                Command="{Binding FetchImageCommand}"
+                HorizontalOptions="Fill"
+                Text="Fetch Image!" />
+            <Button
+                Command="{Binding SaveImageCommand}"
+                HorizontalOptions="Fill"
+                Text="Save Image Locally!" />
+
+            <Label FontSize="Subtitle" Text="Image from device:" />
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="150"
+                Source="{Binding StoredImageSource}"
+                WidthRequest="150" />
+
+            <Button
+                Command="{Binding LoadImageCommand}"
+                HorizontalOptions="Fill"
+                Text="Read Image from local device" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MiJenner.ServicesMAUI
+﻿namespace MiJenner.ServicesMAUI
 {
     public class DataStorageBin : IDataStorageBin
     {
@@ -15,7 +9,7 @@ namespace MiJenner.ServicesMAUI
             _directoryPath = FileSystem.Current.AppDataDirectory;
         }
 
-        public bool SaveBinary(string fileName, byte[] data)
+        public async Task<bool> SaveBinary(string fileName, byte[] data)
         {
             try
             {
@@ -31,7 +25,7 @@ namespace MiJenner.ServicesMAUI
             }
         }
 
-        public byte[] ReadBinary(string fileName)
+        public async Task<byte[]> ReadBinary(string fileName)
         {
             try
             {
@@ -52,7 +46,7 @@ namespace MiJenner.ServicesMAUI
             }
         }
 
-        public bool DeleteBinary(string fileName)
+        public async Task<bool> DeleteBinary(string fileName)
         {
             try
             {
@@ -72,13 +66,13 @@ namespace MiJenner.ServicesMAUI
             }
         }
 
-        public bool FileExists(string fileName)
+        public async Task<bool> FileExists(string fileName)
         {
             // Check if the file exists in the storage
             return File.Exists(Path.Combine(_directoryPath, fileName));
         }
 
-        public IEnumerable<string> GetAllFiles()
+        public async Task<IEnumerable<string>> GetAllFiles()
         {
             // Get a list of all binary files in the storage directory
             return Directory.GetFiles(_directoryPath, "*.bin").Select(Path.GetFileName);

@@ -17,6 +17,12 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<RootNamespace>MiJenner.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<PackageId>MiJenner.$(AssemblyName)</PackageId>
+		<Title>MiJenner.$(AssemblyName)</Title>
+		<Company>Jenner IT</Company>
+		<Authors>Michael Jenner</Authors>
+		<Product>MiJenner.$(AssemblyName)</Product>
+		<Copyright>MIT</Copyright>
 	</PropertyGroup>
 
 	<ItemGroup>

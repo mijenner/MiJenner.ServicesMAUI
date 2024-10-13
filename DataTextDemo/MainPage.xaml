@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DataTextDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DataTextDemo"
+    x:DataType="local:MainViewModel">
+
+    <StackLayout
+        Padding="30,0"
+        Orientation="Vertical"
+        Spacing="25">
+        <Label FontSize="Header" Text="Data Storage Text - Demo" />
+
+        <Entry Placeholder="Enter text" Text="{Binding Text}" />
+
+        <Button
+            Command="{Binding SaveNoteCommand}"
+            HorizontalOptions="Fill"
+            Text="Save" />
+
+        <Label FontSize="Body" Text="Read text from storage is: " />
+
+        <Label FontSize="Body" Text="{Binding SavedText}" />
+
+        <Button
+            Command="{Binding ReadNoteCommand}"
+            HorizontalOptions="Fill"
+            Text="Read" />
+
+    </StackLayout>
+
+</ContentPage>
