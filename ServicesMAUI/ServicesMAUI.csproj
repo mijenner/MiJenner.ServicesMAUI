@@ -21,8 +21,12 @@
 		<Title>MiJenner.$(AssemblyName)</Title>
 		<Company>Jenner IT</Company>
 		<Authors>Michael Jenner</Authors>
-		<Product>MiJenner.$(AssemblyName)</Product>
-		<Copyright>MIT</Copyright>
+		<Product>MiJenner$(AssemblyName)</Product>
+		<Copyright>Copyright (c) 2024 Jenner IT</Copyright>
+		<AssemblyName>MiJenner.$(MSBuildProjectName)</AssemblyName>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>Helper services for beginner .NET MAUI programmers</Description>
+		<PackageProjectUrl>https://github.com/mijenner/MiJenner.ServicesMAUI</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
