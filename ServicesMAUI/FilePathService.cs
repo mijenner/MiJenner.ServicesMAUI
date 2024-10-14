@@ -10,6 +10,7 @@
         }
 
         /// <summary>
+        /// Provides full file path (incl directory) for .NET MAUI apps. 
         /// Examples of usage: 
         /// var filePathService = new FilePathService();
         /// string settingsPath = filePathService.GetFilePath(FileType.Settings);
@@ -31,6 +32,7 @@
                 FileTypeEnum.Settings => "settings.json",
                 FileTypeEnum.Image => "image.png",
                 FileTypeEnum.Text => "document.txt",
+                FileTypeEnum.Sqlite => "sqlite.db3",
                 FileTypeEnum.Other => "miscfile.dat",
                 _ => "defaultfile.dat"
             };

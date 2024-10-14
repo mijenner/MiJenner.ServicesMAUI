@@ -5,6 +5,7 @@
         Settings,
         Image,
         Text,
+        Sqlite, 
         Other 
     }
 }
