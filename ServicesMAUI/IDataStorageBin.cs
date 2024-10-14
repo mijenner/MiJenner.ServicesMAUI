@@ -12,6 +12,8 @@
 
         /// <summary>
         /// Reads binary data from the specified file.
+        /// Syntax: 
+        /// 
         /// </summary>
         /// <param name="fileName">The name of the file to read.</param>
         /// <returns>The read binary data.</returns>
