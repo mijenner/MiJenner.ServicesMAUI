@@ -14,7 +14,7 @@
             try
             {
                 var fullPath = Path.Combine(_directoryPath, fileName);
-                File.WriteAllBytes(fullPath, data);
+                await File.WriteAllBytesAsync(fullPath, data);
                 return true;
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@
             try
             {
                 var fullPath = Path.Combine(_directoryPath, fileName);
-                return File.ReadAllBytes(fullPath);
+                return await File.ReadAllBytesAsync(fullPath);
             }
             catch (FileNotFoundException)
             {

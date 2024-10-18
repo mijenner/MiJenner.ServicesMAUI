@@ -14,7 +14,7 @@
             try
             {
                 var fullPath = Path.Combine(_directoryPath, fileName);
-                File.WriteAllText(fullPath, text);
+                await File.WriteAllTextAsync(fullPath, text);
                 return true;
             }
             catch
@@ -29,7 +29,7 @@
             try
             {
                 var fullPath = Path.Combine(_directoryPath, fileName);
-                return File.ReadAllText(fullPath);
+                return await File.ReadAllTextAsync(fullPath);
             }
             catch
             {
