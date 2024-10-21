@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SettingsManagerMauiDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SettingsManagerMauiDemo"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:DataType="local:MainViewModel">
+
+    <StackLayout
+        Padding="30,0"
+        Orientation="Vertical"
+        Spacing="10">
+        <Label Text="Settings Demo" />
+        <Label Text="{Binding Settings.ManagerSettings.FilePath, StringFormat='Settings saved in {0}'}" />
+        <StackLayout Orientation="Horizontal" Spacing="5">
+            <Label FontSize="Body" Text="ConnString = " />
+            <Entry Text="{Binding ConnString}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="5">
+            <Label FontSize="Body" Text="WantsNotifications = " />
+            <Switch IsToggled="{Binding WantsNotifications}" />
+        </StackLayout>
+
+        <Button
+            Command="{Binding InitializeCommand}"
+            HorizontalOptions="Fill"
+            Text="Load settings" />
+
+        <Button
+            Command="{Binding SaveSettingsCommand}"
+            HorizontalOptions="Fill"
+            Text="Save settings" />
+
+    </StackLayout>
+
+</ContentPage>
