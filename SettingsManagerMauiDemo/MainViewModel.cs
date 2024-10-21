@@ -40,17 +40,5 @@ namespace SettingsManagerMauiDemo
             await settings.SaveSettingsToDiskAsync();
             await Shell.Current.DisplayAlert("Saved!", "Settings are saved", "OK");
         }
-
-        // Call this method after modifying properties in the settings objects
-        public void NotifyAppSettingsChanged()
-        {
-            OnPropertyChanged(nameof(AppSettings));
-        }
-
-        public void NotifyUserSettingsChanged()
-        {
-            OnPropertyChanged(nameof(UserSettings));
-        }
-
     }
 }
