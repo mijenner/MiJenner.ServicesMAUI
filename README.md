@@ -33,7 +33,7 @@ UserSettings userSettings;
 SettingsManagerMAUI<AppSettings, UserSettings> settings; 
 ```
 
-Now we want to register these with the DI container. This is a little cumbersome due to the many injections, but could be done like: 
+Now we want to register these with the DI container. This is a little cumbersome due to the many injections, but could be done in MauiProgram like: 
 ```cs 
 // Configure AppSettings and UserSettings
 var appSettings = new AppSettings { ConnString = "database.sqlite3", ApiString = "anAPIstring", IsRunningOK = true };
